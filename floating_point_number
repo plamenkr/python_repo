@@ -1,0 +1,27 @@
+# 1. Write a program that reads a floating-point number and:
+# - prints "zero" if the number is zero
+# - prints "positive" or "negative"
+# - adds "small" if the absolute value of the number is less than 1 and it is not 0, or "large" if it exceeds
+# 1 000 000
+#
+number = float(input())
+
+if number == 0:
+     print("zero")
+# elif number > 0:
+#
+#     if 0 < number < 1:
+#         print("small positive")
+#     elif 1 <= number < 1000000:
+#         print("positive")
+#     else:
+#         print("large positive")
+#
+# elif number < 0:
+#
+#     if 0 < abs(number) < 1:
+#         print("small negative")
+#     elif 1 <= abs(number) < 1000000:
+#         print("negative")
+#     else:
+#         print("large negative")
