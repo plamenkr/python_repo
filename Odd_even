@@ -1,0 +1,14 @@
+ iterations = int(input())
+ odd_flag = False
+ for i in range(iterations):
+     number = int(input())
+     if number % 2 != 0:
+         odd_flag = True
+
+         break
+
+
+ if odd_flag:
+     print(f"{number} is odd!")
+ else:
+     print("All numbers are even.")
