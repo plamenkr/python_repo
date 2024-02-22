@@ -1,0 +1,12 @@
+number_flag = False
+number = float(input())
+
+while True:
+     if 1 <= number <= 100:
+         number_flag = True
+         break
+
+     number = float(input())
+
+ if number_flag:
+     print(f'The number {number} is between 1 and 100')
