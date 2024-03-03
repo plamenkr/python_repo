@@ -1,0 +1,9 @@
+start = int(input())
+end = int(input())
+string_to_print = ''
+
+for i in range(start, end + 1):
+    string_to_print += (chr(i)) + ' '
+
+
+print(string_to_print[:-1])
