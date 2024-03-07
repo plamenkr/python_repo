@@ -1,0 +1,18 @@
+number_of_snowballs = int(input())
+# weight = int(input())
+# time_needed = int(input())
+# quality = int(input())
+best_value = 0
+
+for i in range (number_of_snowballs):
+    weight = int(input())
+    time_needed = int(input())
+    quality = int(input())
+    value = (weight / time_needed ) ** quality
+    if value > best_value:
+        best_value = value
+        best_w = weight
+        best_q = quality
+        best_time = time_needed
+# "{snowball_weight} : {snowball_time} = {snowball_value} ({snowball_quality})"
+print(f'{best_w} : {best_time} = {best_value:.0f} ({best_q})')
