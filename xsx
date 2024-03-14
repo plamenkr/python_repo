@@ -1,0 +1,24 @@
+numbers = input()
+integer_numbers = [int(number) for number in numbers.split()]
+n = int(input())
+
+
+
+
+ print(integer_numbers)
+
+from sys import maxsize
+min_num = maxsize
+list_of_str = input().split(' ')
+n = int(input())
+list_of_int = [int(number) for number in list_of_str]
+
+ for i in range(n):
+     for j in list_of_int:
+         if j < min_num:
+             min_num = j
+     list_of_int.remove(min_num)
+     min_num = maxsize
+
+
+ print(*list_of_int, sep=", ")
