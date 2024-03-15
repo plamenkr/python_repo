@@ -1,0 +1,23 @@
+gifts = input().split(' ')
+ while True:
+     command = input()
+     if command == "No Money":
+         break
+
+     command_parts = command.split(' ')
+     action = command_parts[0]
+     if action == "OutOfStock":
+         for i in range(len(gifts)):
+             if gifts[i] == command_parts[1]:
+                 gifts[i] = None
+     elif action == "Required":
+         index, new_gift = int(command_parts[2]), command_parts[1]
+         if 0 < index < len(gifts):
+             gifts[index] = new_gift
+     elif action == "JustInCase":
+         gifts.pop()
+         gifts.append(command_parts[1])
+
+ for element in gifts:
+     if element != None:
+         print(element, end=' ' )
