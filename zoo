@@ -1,0 +1,14 @@
+tail = input()
+body = input()
+head = input()
+
+arrangement = [head, body, tail]
+
+print(arrangement)
+
+mylist = []
+for i in range(3):
+    data = input()
+    mylist.append(data)
+
+mylist[0], mylist[2] = mylist[2], mylist[0]
