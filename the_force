@@ -1,0 +1,38 @@
+command = input()
+jedi_masters = {}
+
+while command != "Lumpawaroo":
+    if "|" in command:
+        action = command.split(" | ")
+        force_side, force_user = action[0], action[1]
+        user_is_part_of_the_force = False
+        for value in jedi_masters.values():
+            if force_user in value:
+                user_is_part_of_the_force = True
+                break
+        if not user_is_part_of_the_force:
+            if force_side not in jedi_masters.keys():
+                jedi_masters[force_side] = [force_user]
+            else:
+                jedi_masters[force_side].append(force_user)
+
+    elif "->" in command:
+        action = command.split(" -> ")
+        force_user, force_side = action[0], action[1]
+        for key, value in jedi_masters.items():
+            if force_user in value:
+                jedi_masters[key].pop(value.index(force_user))
+                break
+        if force_side not in jedi_masters.keys():
+            jedi_masters[force_side] = [force_user]
+        else:
+            jedi_masters[force_side].append(force_user)
+        print(f'{force_user} joins the {force_side} side!')
+
+    command = input()
+
+for force_side, force_user in jedi_masters.items():
+    if len(force_user) > 0:
+        print(f"Side: {force_side}, Members: {len(force_user)}")
+        for user in force_user:
+            print(f'! {user}')
