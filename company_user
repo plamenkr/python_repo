@@ -1,0 +1,15 @@
+company_dict = {}
+while True:
+    company_info = input().split(" -> ")
+    if company_info[0] == "End":
+        break
+    company_name, company_id = company_info[0], company_info[1]
+    if company_name not in company_dict.keys():
+        company_dict[company_name] = []
+    if company_id not in company_dict[company_name]:
+        company_dict[company_name].append(company_id)
+
+for company, id in company_dict.items():
+    print(f'{company}')
+    for i in id:
+        print(f'-- {i}')
