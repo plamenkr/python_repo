@@ -1,0 +1,14 @@
+number_of_students = int(input())
+all_students = {}
+for student in range(number_of_students):
+    student_name = input()
+    student_grade = float(input())
+    if student_name not in all_students.keys():
+        all_students[student_name] = []
+    all_students[student_name].append(student_grade)
+
+good_students = {student: sum(grade)/len(grade) for  student, grade in all_students.items() if sum(grade)/len(grade)
+                 >= 4.50}
+
+for key, value in good_students.items():
+    print(f'{key} -> {value:.2f}')
