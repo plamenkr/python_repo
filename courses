@@ -1,0 +1,15 @@
+course_and_students = {}
+while True:
+    info = input().split(" : ")
+    if info[0] == "end":
+        break
+    course, student = info[0], info[1]
+    if course not in course_and_students:
+        course_and_students[course] = []
+    course_and_students[course].append(student)
+
+
+for course, student in course_and_students.items():
+    print(f"{course}: {len(student)}")
+    for student_name in student:
+        print(f'-- {student_name}')
