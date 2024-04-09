@@ -1,0 +1,18 @@
+inventory = {}
+
+while True:
+    orders = input().split()
+    if orders[0] == "Buy" or orders[0] == "buy":
+        break
+    name, price, quantity = orders[0], float(orders[1]), int(orders[2])
+    if name not in inventory:
+        inventory[name] = {"quantity": quantity, "price": price}
+    else:
+        inventory[name]["quantity"] += quantity
+        if inventory[name]["price"] != price:
+            inventory[name]["price"] = price
+
+
+for product_name, value in inventory.items():
+    total_price = value['price'] * value['quantity']
+    print(f"{product_name} -> {total_price:.2f}")
