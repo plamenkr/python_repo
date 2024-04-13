@@ -1,0 +1,29 @@
+item_obtained = False
+all_items ={"shards": 0, "fragments": 0, "motes": 0}
+while not item_obtained:
+    materials_list = input().lower().split()
+    for index in range(0, len(materials_list), 2):
+        value = int(materials_list[index])
+        key = materials_list[index + 1]
+        if key not in all_items.keys():
+            all_items[key] = 0
+        all_items[key] += value
+
+        if "shards" in all_items and  all_items["shards"] >= 250:
+            print(f'Shadowmourne obtained!')
+            item_obtained = True
+            all_items["shards"] -= 250
+            break
+        elif "fragments" in all_items and all_items["fragments"] >= 250:
+            print(f'Valanyr obtained!')
+            item_obtained = True
+            all_items["fragments"] -= 250
+            break
+        elif "motes" in all_items and all_items["motes"] >= 250:
+            print(f'Dragonwrath obtained!')
+            item_obtained = True
+            all_items["motes"] -= 250
+            break
+
+for key, value in all_items.items():
+    print(f'{key}: {value}')
