@@ -1,0 +1,23 @@
+resources = {}
+
+while True:
+    command = input()
+    if command == "stop":
+        break
+    quantity = input()
+
+    if command not in resources.keys():
+        resources[command] = 0
+    resources[command] += int(quantity)
+
+for material, qty in resources.items():
+    print(f'{material} -> {qty}')
+
+3. Capitals
+countries = input().split(", ")
+capitals = input().split(", ")
+
+geo_dict = dict(zip(countries, capitals))
+
+for country, capital in geo_dict.items():
+    print(f'{country} -> {capital}')
