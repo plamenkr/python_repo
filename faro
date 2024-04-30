@@ -1,0 +1,14 @@
+deck = input().split()
+number_of_shuffles = int(input())
+
+for shuffle in range(number_of_shuffles):
+    split_point = len(deck) // 2
+    left_deck, right_deck = deck[:split_point], deck[split_point:]
+    new_deck = []
+    for card in range(len(left_deck)):
+        new_deck.append(left_deck[card])
+        new_deck.append((right_deck[card]))
+
+    deck = new_deck
+
+print(deck)
