@@ -1,0 +1,13 @@
+words = input().split()
+d = {}
+
+for word in words:
+    word_lower = word.lower()
+    if word_lower not in d:
+        d[word_lower] = 0
+    d[word_lower] += 1
+
+
+for key_word, value_word_count in d.items():
+    if value_word_count % 2 != 0:
+        print(key_word, end=" ")
