@@ -1,0 +1,17 @@
+student_dict = {}
+while True:
+    command = input()
+    if ":" not in command:
+        course_to_search = command
+        break
+    student_data = command.split(":")
+    student, student_id, course = student_data[0], student_data[1], student_data[2]
+    if student not in student_dict.keys():
+        student_dict[student] = {}
+    student_dict[student][student_id] = course
+
+
+for key, item in student_dict.items():
+    for id, course in item.items():
+        if course.lower()[0:3] == course_to_search.lower()[0:3]:
+            print(f'{key} - {id}')
