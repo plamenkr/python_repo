@@ -1,0 +1,18 @@
+number_of_people = int(input())
+capacity = int(input())
+
+
+full_courses = number_of_people // capacity
+diff = number_of_people - (full_courses * capacity)
+if diff > 0:
+    print(full_courses + 1)
+else:
+    print(full_courses)
+
+another solution is
+
+from math import ceil
+number_of_people = int(input())
+capacity = int(input())
+full_courses = ceil(number_of_people / capacity)
+print(full_courses)
